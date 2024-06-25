@@ -100,6 +100,10 @@ body {
     box-shadow: 3px 3px 3px #595c5d
 }
 
+#result-text {
+    color: #071952;
+}
+
 #result-button {
     margin-top: 15px;
     font-size: 1rem;

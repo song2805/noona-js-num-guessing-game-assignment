@@ -50,22 +50,22 @@ function play() {
     numberOfAttempts++;
     chances--;
     
-    attempts.textContent = `시도횟수 : ${numberOfAttempts}번`;
-    chanceArea.textContent= `남은기회 : ${chances}번`;
+    attempts.textContent = `시도 횟수 : ${numberOfAttempts}번`;
+    chanceArea.textContent= `남은 기회 : ${chances}번`;
 
 
     if(userValue < computerNum) {
       
        resultImgArea.src="./gif-img/up-img.webp";
-       resultArea.textContent ="Up!!!";
+       resultArea.textContent ="위로 !!!";
        resultArea.style.color="red";
        console.log("Up!!! ");
 
     } else if (userValue > computerNum){
        
         resultImgArea.src="./gif-img/down-img.webp";
-        resultArea.textContent = "Down!!!!!";
-        resultArea.style.color="blue";
+        resultArea.textContent = "아래로 !!!";
+        resultArea.style.color="#088395";
         console.log("Down");
     } else {
         resultImgArea.src="./gif-img/goodjob-img.webp";
@@ -93,15 +93,16 @@ function play() {
 function reset() {
     pickRandomNumber();
     resultImgArea.src="./gif-img/tambourine.gif";
-    resultArea.textContent = "결과값이 여기 나옵니다";
+    resultArea.textContent = "숫자를 맞쳐 보세요!!!";
+    resultArea.style.color="#071952"
     playButton.disabled = false;
     
     // clear user input window user input 창이 깨끗하게 정리되고
     userInput.value = "";
-    numberOfAttempts="";
-    chances= "";
-    attempts.textContent = `시도횟수 : ${numberOfAttempts}`;
-    chanceArea.textContent= `남은기회 : ${chances}`;
+    numberOfAttempts="0";
+    chances= "5";
+    attempts.textContent = `시도 횟수 : ${numberOfAttempts}`;
+    chanceArea.textContent= `남은 기회 : ${chances}`;
     chances= 5;
     history = [];
     // 새로운 번호가 생성되고
