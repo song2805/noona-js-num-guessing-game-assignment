@@ -3,10 +3,10 @@
 //만약에 유저가 랜던번호를 맞추면, 맞췄습니다!
 //랜덤번호가 < 유저번호 Down!!!
 //랜던번호가 > 유저번호 Up!!
-//Reset 버튼을 누르면 게임이 리셋된다
+//새게임 New Game 버튼을 누르면 게임이 리셋된다
 //5번의 기회를 다쓰면 게임이 끝난다 (더이상 추측 불가, 버튼이 disable)
 //유저가 1~100 범위 밖에 숫자를 입력하면 알려준다. 기회를 깍지 않는다.
-//유저가 이미 입력한 숫자를 또 입력하면, 알려준다. 기회를 가지 않는다.
+//유저가 이미 입력한 숫자를 또 입력하면, 알려준다. 기회를 깍지 않는다.
 
 
 
@@ -40,11 +40,12 @@ function play() {
     let userValue = userInput.value;
     if(userValue < 1 || userValue>100) {
         resultArea.textContent="1과 100사이 숫자를 입력해 주세요";
-        resultArea.style.color="red";
+        resultArea.style.color="#365E32";
         return;  
     }
-    if(history.includes(userValue)){
-        resultArea.textContent =  "이미 입력한 숫자입니다 다른 숫자를 입력해 주세요"  ;
+    else if(history.includes(userValue)){        
+        resultArea.textContent = "이미 입력한 숫자입니다 다른 숫자를 입력해 주세요";
+        resultArea.style.color="E76F51";
         return;
     }
     numberOfAttempts++;
