@@ -40,6 +40,7 @@ function play() {
     let userValue = userInput.value;
     if(userValue < 1 || userValue>100) {
         resultArea.textContent="1과 100사이 숫자를 입력해 주세요";
+        resultArea.style.color="red";
         return;  
     }
     if(history.includes(userValue)){
@@ -57,19 +58,21 @@ function play() {
       
        resultImgArea.src="./gif-img/up-img.webp";
        resultArea.textContent ="Up!!!";
-
-        console.log("Up!!! ");
+       resultArea.style.color="red";
+       console.log("Up!!! ");
 
     } else if (userValue > computerNum){
        
         resultImgArea.src="./gif-img/down-img.webp";
         resultArea.textContent = "Down!!!!!";
+        resultArea.style.color="blue";
         console.log("Down");
     } else {
         resultImgArea.src="./gif-img/goodjob-img.webp";
         resultArea.textContent ="맞췄습니다.";
+        resultArea.style.color="black";
         gameOver=true;
-        console.log("맞췄습니다.")
+        console.log("맞췄습니다.");
     }
 
 
