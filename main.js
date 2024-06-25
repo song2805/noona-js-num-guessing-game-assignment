@@ -17,7 +17,7 @@ let resultArea = document.getElementById("result-text");
 let resetButton = document.getElementById("result-button");
 let attempts = document.getElementById("attempts-area");
 let resultImgArea = document.querySelector(".main-img");
-let chances = 5;
+let chances = 7;
 let numberOfAttempts = 0;
 
 let gameOver = false;
@@ -100,10 +100,9 @@ function reset() {
     // clear user input window user input 창이 깨끗하게 정리되고
     userInput.value = "";
     numberOfAttempts="0";
-    chances= "5";
+    chances= 7;
     attempts.textContent = `시도 횟수 : ${numberOfAttempts}`;
     chanceArea.textContent= `남은 기회 : ${chances}`;
-    chances= 5;
     history = [];
     // 새로운 번호가 생성되고
     
