@@ -77,28 +77,32 @@ function play() {
 
     if(chances < 1) {
         gameOver = true;
+    
 
-    }
-    if (gameOver == true) {
-        playButton.disabled = true;
-    }
-
-    if(chances === 0) {
-        chanceArea.disabled = true;
-    }
+       if (gameOver == true) {
+           playButton.disabled = true;
+       }else if(chances === 0) {
+           chanceArea.disabled = true;
+     }
+   }
 }
 
 function reset() {
+    pickRandomNumber();
     resultImgArea.src="./gif-img/tambourine.gif";
     resultArea.textContent = "결과값이 여기 나옵니다";
     playButton.disabled = false;
     
     // clear user input window user input 창이 깨끗하게 정리되고
     userInput.value = "";
-    attempts.textContent = `시도횟수 : ${numberOfAttempts=""}`;
-    chanceArea.textContent= `남은기회 : ${chances=""}`;
+    numberOfAttempts="";
+    chances= "";
+    attempts.textContent = `시도횟수 : ${numberOfAttempts}`;
+    chanceArea.textContent= `남은기회 : ${chances}`;
+    chances= 5;
+    history = [];
     // 새로운 번호가 생성되고
-    pickRandomNumber();
+    
     
 
 }
