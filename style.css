@@ -65,14 +65,15 @@ body {
     width: 55px;
     height: 55px;
     border-radius: 50px;
-    border: 1px solid #78f6f8;
+    border: 1px solid #91DDCF;
     background-color: #78f6f8;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
 #play-button:hover {
-    background-color:#0ad3e1;
-    border: 1px solid #0ad3e1;
+    background-color:#3ABEF9;
+    border: 1px solid #3ABEF9;
+    color:white;
 }
 
 #result-text {
@@ -91,7 +92,9 @@ body {
 }
 
 #result-button:hover {
-    background-color: #FF9EAA;
+    border: 1px solid #FF76CE;
+    background-color: #FF76CE;
+    color: #FDFFC2;
 }
 
 @media (max-width: 768px) {
