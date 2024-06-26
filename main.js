@@ -18,9 +18,8 @@ let resetButton = document.getElementById("result-button");
 let attempts = document.getElementById("attempts-area");
 let resultImgArea = document.querySelector(".main-img");
 let historyList = document.getElementById("historyList");
-let chances = 7;
+let chances = 5;
 let numberOfAttempts = 0;
-
 let gameOver = false;
 let chanceArea = document.getElementById("chance-area");
 let history = [];
@@ -89,8 +88,11 @@ function play() {
     }
     if (gameOver == true) {
         playButton.disabled = true;
+       
+        
     } else if (chances === 0) {
         chanceArea.disabled = true;
+       
     }
 
 }
@@ -104,8 +106,8 @@ function reset() {
 
     // clear user input window user input 창이 깨끗하게 정리되고
     userInput.value = "";
-    numberOfAttempts = "0";
-    chances = 7;
+    numberOfAttempts = 0;
+    chances = 5;
     attempts.textContent = `시도 횟수 : ${numberOfAttempts}번`;
     chanceArea.textContent = `남은 찬스 : ${chances}번`;
     history = [];

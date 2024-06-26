@@ -70,12 +70,6 @@ body {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
-#play-button:hover {
-    background-color:#3ABEF9;
-    border: 1px solid #3ABEF9;
-    color:white;
-}
-
 #result-text {
     color: #071952;
 }
@@ -140,3 +134,7 @@ body {
         padding-top: 20px;
     }
 }
+
+
+
+  
