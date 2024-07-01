@@ -170,6 +170,9 @@ body {
     .direction-2 {
         display:none;
     }
+    #answer {
+        padding-bottom: 15px;
+    }
 }
 
 
