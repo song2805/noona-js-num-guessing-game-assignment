@@ -27,12 +27,24 @@ let history = [];
 
 console.log(playButton);
 playButton.addEventListener("click", play);
+userInput.addEventListener("keydown", function (event) {
+    if (event.keyCode === 13) {
+      play(event);     
+    }
+    
+  });
 resetButton.addEventListener("click", reset);
 
 // input에 있는 value를 없에준다. "focus"란 커서가 오게될때 
 userInput.addEventListener("focus", function () {
     userInput.value = ""
 })
+
+//
+userInput.addEventListener("keyup", function (event) {
+    if (event.keyCode === 13)
+    userInput.value = ""
+}) 
 
 // Random Number
 function pickRandomNumber() {
