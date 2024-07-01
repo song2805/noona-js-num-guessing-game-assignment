@@ -84,9 +84,14 @@ body {
 
 #result-text {
     color: #071952;
+    margin-bottom: 5px;
 }
 
-#result-button {
+#result-text-2 {
+   margin-top: 3px;
+}
+
+#reset-button {
     margin-top: 15px;
     font-size: 1rem;
     height: 40px;
@@ -97,10 +102,19 @@ body {
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
 }
 
-#result-button:hover {
+#reset-button:hover {
     border: 1px solid #FF76CE;
     background-color: #FF76CE;
     color: #FDFFC2;
+}
+
+.direction {
+    margin-top:8px;
+    display: none;
+
+}
+.direction-2 {
+    display:block;
 }
 
 
@@ -145,7 +159,16 @@ body {
     .btn-go,
     .btn-result {
         position: static;
-        padding-top: 20px;
+        padding-top: 10px;
+    }
+    .input-history {
+        padding-left: 15%;
+    }
+    .direction {
+        display: block;
+    }
+    .direction-2 {
+        display:none;
     }
 }
 

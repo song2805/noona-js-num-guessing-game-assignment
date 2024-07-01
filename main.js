@@ -15,7 +15,8 @@ let randomNumber = 0;
 let playButton = document.getElementById("play-button");
 let userInput = document.getElementById("user-input");
 let resultArea = document.getElementById("result-text");
-let resetButton = document.getElementById("result-button");
+let resultArea2 = document.getElementById("result-text-2");
+let resetButton = document.getElementById("reset-button");
 let attempts = document.getElementById("attempts-area");
 let resultImgArea = document.querySelector(".main-img");
 let historyList = document.getElementById("historyList");
@@ -29,6 +30,7 @@ let history = [];
 
 console.log(playButton);
 playButton.addEventListener("click", play);
+
 // 엔터키로 Go 버튼 작동시키기
 userInput.addEventListener("keydown", function (event) {
     if (event.keyCode === 13) {
@@ -66,8 +68,10 @@ function play() {
     }
 
     if (history.includes(userValue)) {
-        resultArea.textContent = "이미 입력한 숫자입니다 다른 숫자를 입력해 주세요";
+        resultArea.textContent = "이미 입력한 숫자입니다";
+        resultArea2.textContent = "다른 숫자를 입력해 주세요";
         resultArea.style.color = "#E76F51";
+        resultArea2.style.color = "#E76F51";
         return;
     }
     numberOfAttempts++;
@@ -109,7 +113,7 @@ function play() {
         playButton.disabled = true;
         userInput.disabled = true;
     }
-    
+
     if (chances == 0 && userValue == randomNumber) {
         correctNumber();
     } else if (chances == 0 && userValue != randomNumber) {

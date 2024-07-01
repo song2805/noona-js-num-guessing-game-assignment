@@ -11,7 +11,7 @@
 <body>
     <div class="container number-container">       
         <div class="container game-box">
-            <div id="answer" style="text-align: left;"></div>
+            <div id="answer"></div>
             <span class="game-title">
                 <h3>1부터 100까지</h3>
                 <h1>숫자 맞추기 게임</h1>
@@ -20,6 +20,7 @@
             <div id="result-img-area">
                 <img src="./gif-img/tambourine.gif" class="main-img">
                 <h2 id="result-text">숫자를 맞쳐 보세요!!!</h2>
+                <h2 id="result-text-2"></h2>
             </div>
 
             <div id="attempts-area">시도 횟수 : 0번</div>
@@ -37,14 +38,17 @@
 
             <div class="input-btn-go">
                 <input type="number" id="user-input" placeholder="1부터 100까지 숫자를 입력하세요" />
+                <p class ="direction">Click the <strong>Go</strong> or press the<strong>Enter Key</strong></p>
+    
                 <div class="btn-go">
                     <button id="play-button">Go</button>
                 </div>
             </div>
+            <p class ="direction-2">Click the <strong>Go</strong> or press the <strong>Enter Key</strong></p>
 
 
             <div class="btn-result">
-                <button id="result-button">새게임 New Game</button>
+                <button id="reset-button">새게임 New Game</button>
             </div>
 
         </div>
