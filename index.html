@@ -9,8 +9,9 @@
 </head>
 
 <body>
-    <div class="container number-container">
+    <div class="container number-container">       
         <div class="container game-box">
+            <div id="answer" style="text-align: left;"></div>
             <span class="game-title">
                 <h3>1부터 100까지</h3>
                 <h1>숫자 맞추기 게임</h1>
@@ -21,9 +22,18 @@
                 <h2 id="result-text">숫자를 맞쳐 보세요!!!</h2>
             </div>
 
-
             <div id="attempts-area">시도 횟수 : 0번</div>
-            <div id="chance-area">남은 찬스 : 5번</div>
+            <div id="chance-area">남은 찬스 : 3번</div>
+            
+            <div id="history-box">
+                <div class="input-history">입력했던 숫자들 :</div>
+                <div id="enteredNumber"></div>
+            </div>
+               
+           
+            
+            
+           
 
             <div class="input-btn-go">
                 <input type="number" id="user-input" placeholder="1부터 100까지 숫자를 입력하세요" />

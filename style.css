@@ -36,6 +36,18 @@ body {
     font-size: 1.2rem;
 }
 
+#history-box {
+    display: flex;
+    margin-bottom: 10px;
+}
+.input-history {
+    padding-left: 22%;
+}
+#enteredNumber {
+    padding-left: 5px;
+}
+
+
 .main-img {
     height: 20vh;
 }
@@ -91,6 +103,8 @@ body {
     color: #FDFFC2;
 }
 
+
+
 @media (max-width: 768px) {
     .game-title {
         display: block;
@@ -113,7 +127,7 @@ body {
         width: 13rem;
         padding-left: 0px;
         font-size: 1.2rem;
-    }
+    }   
 
     .game-title h3 {
         margin-top: -10px;

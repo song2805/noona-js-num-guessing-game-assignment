@@ -5,11 +5,12 @@
 //랜던번호가 > 유저번호 Up!!
 //새게임 New Game 버튼을 누르면 게임이 리셋된다
 //5번의 기회를 다쓰면 게임이 끝난다 (더이상 추측 불가, 버튼이 disable)
+//시도횟수 
 //유저가 1~100 범위 밖에 숫자를 입력하면 알려준다. 기회를 깍지 않는다.
 //유저가 이미 입력한 숫자를 또 입력하면, 알려준다. 기회를 깍지 않는다.
 
-
-
+let enteredNumber = document.getElementById("enteredNumber");
+let answerNumber = document.getElementById("answer");
 let randomNumber = 0;
 let playButton = document.getElementById("play-button");
 let userInput = document.getElementById("user-input");
@@ -18,7 +19,7 @@ let resetButton = document.getElementById("result-button");
 let attempts = document.getElementById("attempts-area");
 let resultImgArea = document.querySelector(".main-img");
 let historyList = document.getElementById("historyList");
-let chances = 5;
+let chances = 3;
 let numberOfAttempts = 0;
 let gameOver = false;
 let chanceArea = document.getElementById("chance-area");
@@ -26,8 +27,9 @@ let history = [];
 
 console.log(playButton);
 playButton.addEventListener("click", play);
-
 resetButton.addEventListener("click", reset);
+
+// input에 있는 value를 없에준다. "focus"란 커서가 오게될때 
 userInput.addEventListener("focus", function () {
     userInput.value = ""
 })
@@ -36,6 +38,7 @@ userInput.addEventListener("focus", function () {
 function pickRandomNumber() {
     randomNumber = Math.floor(Math.random() * 100) + 1;
     console.log("정답", randomNumber);
+    answerNumber.textContent = `정답 : ${randomNumber}`;
 }
 
 // To start the game
@@ -59,6 +62,7 @@ function play() {
     chanceArea.textContent = `남은 기회 : ${chances}번`;
 
 
+// To check about up!!! Down!!! correct!!  
     if (userValue < randomNumber) {
 
         resultImgArea.src = "./gif-img/up-img.webp";
@@ -81,20 +85,24 @@ function play() {
     }
 
     history.push(userValue);
-
+    console.log(history)
+    enteredNumber.style.color = "#DA7297";
+    enteredNumber.innerHTML = ` ${history}`;
     if (chances < 1) {
         gameOver = true;
 
-    }
+    } 
     if (gameOver == true) {
         playButton.disabled = true;
        
         
-    } else if (chances === 0) {
+    } 
+    if (chances === 0) {
         chanceArea.disabled = true;
-       
+        resultImgArea.src = "./gif-img/monkey.gif"
+        resultArea.innerHTML = "Game Over";
+        resultArea.style.color = "#FF76CE ";
     }
-
 }
 
 function reset() {
@@ -107,10 +115,13 @@ function reset() {
     // clear user input window user input 창이 깨끗하게 정리되고
     userInput.value = "";
     numberOfAttempts = 0;
-    chances = 5;
+    chances = 3;
+    history = [];
     attempts.textContent = `시도 횟수 : ${numberOfAttempts}번`;
     chanceArea.textContent = `남은 찬스 : ${chances}번`;
-    history = [];
+    enteredNumber.textContent = `${history}`;
+
+    
     gameOver=false;
     // 새로운 번호가 생성되고
 
