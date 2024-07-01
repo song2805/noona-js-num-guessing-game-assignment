@@ -25,14 +25,17 @@ let gameOver = false;
 let chanceArea = document.getElementById("chance-area");
 let history = [];
 
+
+
 console.log(playButton);
 playButton.addEventListener("click", play);
+// 엔터키로 Go 버튼 작동시키기
 userInput.addEventListener("keydown", function (event) {
     if (event.keyCode === 13) {
-      play(event);     
+        play(event);
     }
-    
-  });
+
+});
 resetButton.addEventListener("click", reset);
 
 // input에 있는 value를 없에준다. "focus"란 커서가 오게될때 
@@ -40,11 +43,11 @@ userInput.addEventListener("focus", function () {
     userInput.value = ""
 })
 
-//
+// input에 있는 value를 숫자 입력 후 엔터키를 사용하면 없에준다. 13은 엔터키 keycode
 userInput.addEventListener("keyup", function (event) {
     if (event.keyCode === 13)
-    userInput.value = ""
-}) 
+        userInput.value = ""
+})
 
 // Random Number
 function pickRandomNumber() {
@@ -74,7 +77,8 @@ function play() {
     chanceArea.textContent = `남은 기회 : ${chances}번`;
 
 
-// To check about up!!! Down!!! correct!!  
+
+    // To check about up!!! Down!!! correct!!  
     if (userValue < randomNumber) {
 
         resultImgArea.src = "./gif-img/up-img.webp";
@@ -98,22 +102,35 @@ function play() {
 
     history.push(userValue);
     console.log(history)
+
     enteredNumber.style.color = "#DA7297";
     enteredNumber.innerHTML = ` ${history}`;
     if (chances < 1) {
         gameOver = true;
-
-    } 
+    }
     if (gameOver == true) {
         playButton.disabled = true;
-       
-        
-    } 
-    if (chances === 0) {
-        chanceArea.disabled = true;
-        resultImgArea.src = "./gif-img/monkey.gif"
+        userInput.disabled = true;
+
+    }
+    if (chances == 0 && userValue == randomNumber) {
+        resultImgArea.src = "./gif-img/goodjob-img.webp";
+        resultArea.textContent = "와우~ 맞췄습니다.";
+        resultArea.style.color = "black";
+        gameOver = true;
+        console.log("맞췄습니다.");
+    }
+
+    if (chances == 0 && userValue != randomNumber) {
+        resultImgArea.src = "./gif-img/monkey.gif";
         resultArea.innerHTML = "Game Over";
         resultArea.style.color = "#FF76CE ";
+    }
+    if (chances === 0) {
+        chanceArea.disabled = true;
+        userInput.disabled = true;
+
+
     }
 }
 
@@ -123,6 +140,7 @@ function reset() {
     resultArea.textContent = "숫자를 맞쳐 보세요!!!";
     resultArea.style.color = "#071952"
     playButton.disabled = false;
+    userInput.disabled = false;
 
     // clear user input window user input 창이 깨끗하게 정리되고
     userInput.value = "";
@@ -133,8 +151,8 @@ function reset() {
     chanceArea.textContent = `남은 찬스 : ${chances}번`;
     enteredNumber.textContent = `${history}`;
 
-    
-    gameOver=false;
+
+    gameOver = false;
     // 새로운 번호가 생성되고
 
 
