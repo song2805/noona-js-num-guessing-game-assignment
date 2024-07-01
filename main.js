@@ -93,11 +93,7 @@ function play() {
         resultArea.style.color = "#088395";
         console.log("Down");
     } else {
-        resultImgArea.src = "./gif-img/goodjob-img.webp";
-        resultArea.textContent = "와우~ 맞췄습니다.";
-        resultArea.style.color = "black";
-        gameOver = true;
-        console.log("맞췄습니다.");
+        correctNumber();
     }
 
     history.push(userValue);
@@ -105,23 +101,18 @@ function play() {
 
     enteredNumber.style.color = "#DA7297";
     enteredNumber.innerHTML = ` ${history}`;
+
     if (chances < 1) {
         gameOver = true;
     }
     if (gameOver == true) {
         playButton.disabled = true;
         userInput.disabled = true;
-
     }
+    
     if (chances == 0 && userValue == randomNumber) {
-        resultImgArea.src = "./gif-img/goodjob-img.webp";
-        resultArea.textContent = "와우~ 맞췄습니다.";
-        resultArea.style.color = "black";
-        gameOver = true;
-        console.log("맞췄습니다.");
-    }
-
-    if (chances == 0 && userValue != randomNumber) {
+        correctNumber();
+    } else if (chances == 0 && userValue != randomNumber) {
         resultImgArea.src = "./gif-img/monkey.gif";
         resultArea.innerHTML = "Game Over";
         resultArea.style.color = "#FF76CE ";
@@ -129,8 +120,6 @@ function play() {
     if (chances === 0) {
         chanceArea.disabled = true;
         userInput.disabled = true;
-
-
     }
 }
 
@@ -150,13 +139,19 @@ function reset() {
     attempts.textContent = `시도 횟수 : ${numberOfAttempts}번`;
     chanceArea.textContent = `남은 찬스 : ${chances}번`;
     enteredNumber.textContent = `${history}`;
-
-
     gameOver = false;
     // 새로운 번호가 생성되고
 
 
 
+}
+
+function correctNumber() {
+    resultImgArea.src = "./gif-img/goodjob-img.webp";
+    resultArea.textContent = "와우~ 맞췄습니다.";
+    resultArea.style.color = "black";
+    gameOver = true;
+    console.log("맞췄습니다.");
 }
 
 pickRandomNumber();
