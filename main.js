@@ -159,6 +159,7 @@ function correctNumber() {
     resultImgArea.src = "./gif-img/goodjob-img.webp";
     resultArea.textContent = "와우~ 맞췄습니다.";
     resultArea.style.color = "black";
+    resultArea2.textContent = "";
     gameOver = true;
     console.log("맞췄습니다.");
 }
