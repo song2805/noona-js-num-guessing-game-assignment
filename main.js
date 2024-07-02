@@ -63,6 +63,7 @@ function play() {
     let userValue = userInput.value;
     if (userValue < 1 || userValue > 100) {
         resultArea.textContent = "1과 100사이 숫자를 입력해 주세요";
+        resultArea2.textContent = "";
         resultArea.style.color = "#071952";
         return;
     }
@@ -88,6 +89,7 @@ function play() {
         resultImgArea.src = "./gif-img/up-img.webp";
         resultArea.textContent = "위로 !!!";
         resultArea.style.color = "red";
+        resultArea2.textContent = "";
         console.log("Up!!! ");
 
     } else if (userValue > randomNumber) {
@@ -95,6 +97,7 @@ function play() {
         resultImgArea.src = "./gif-img/down-img.webp";
         resultArea.textContent = "아래로 !!!";
         resultArea.style.color = "#088395";
+        resultArea2.textContent = "";
         console.log("Down");
     } else {
         correctNumber();
@@ -119,6 +122,7 @@ function play() {
     } else if (chances == 0 && userValue != randomNumber) {
         resultImgArea.src = "./gif-img/monkey.gif";
         resultArea.innerHTML = "Game Over";
+        resultArea2.textContent = "";
         resultArea.style.color = "#FF76CE ";
     }
     if (chances === 0) {
@@ -131,6 +135,7 @@ function reset() {
     pickRandomNumber();
     resultImgArea.src = "./gif-img/tambourine.gif";
     resultArea.textContent = "숫자를 맞쳐 보세요!!!";
+    resultArea2.textContent = "";
     resultArea.style.color = "#071952"
     playButton.disabled = false;
     userInput.disabled = false;
