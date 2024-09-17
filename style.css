@@ -33,9 +33,9 @@ body {
     justify-content: center;
 }
 
-.divied {
-    padding-left: 15px;
-    padding-right: 15px;
+.div-at {
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 #chance-area, #attempts-area {
@@ -49,7 +49,7 @@ body {
     margin-bottom: 10px;
 }
 .input-history {
-    padding-left: 11%;
+    padding-left: 20%;
 }
 #enteredNumber {
     padding-left: 5px;
@@ -144,10 +144,6 @@ body {
 
     #chance-area,
     #attempts-area {
-        position: relative;
-        left: 15%;
-        width: 13rem;
-        padding-left: 0px;
         font-size: 1.2rem;
     }   
 
@@ -170,7 +166,7 @@ body {
         padding-top: 10px;
     }
     .input-history {
-        padding-left: 15%;
+        padding-left: 10%;
     }
     .direction {
         display: block;
