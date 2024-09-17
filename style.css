@@ -163,7 +163,7 @@ body {
     .btn-go,
     .btn-result {
         position: static;
-        padding-top: 10px;
+        padding-top: 5px;
     }
     .input-history {
         padding-left: 10%;
