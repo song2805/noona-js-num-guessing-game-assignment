@@ -169,6 +169,7 @@ body {
         padding-left: 10%;
     }
     .direction {
+        font-size: 0.8rem;
         display: block;
     }
     .direction-2 {
