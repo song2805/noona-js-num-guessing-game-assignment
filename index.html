@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <div class="container number-container">       
+    <div class="container number-container">
         <div class="container game-box">
             <div id="answer"></div>
             <span class="game-title">
@@ -22,29 +22,32 @@
                 <h2 id="result-text">숫자를 맞쳐 보세요!!!</h2>
                 <h2 id="result-text-2"></h2>
             </div>
+            <div class="attempts-chance-area">
+                <div id="attempts-area">시도 횟수 : 0번</div>
+                <div class="divied"> / </div>
+                <div id="chance-area">남은 찬스 : 5번</div>
+            </div>
 
-            <div id="attempts-area">시도 횟수 : 0번</div>
-            <div id="chance-area">남은 찬스 : 3번</div>
-            
+
             <div id="history-box">
                 <div class="input-history">입력했던 숫자들 :</div>
                 <div id="enteredNumber"></div>
             </div>
-               
-           
-            
-            
-           
+
+
+
+
+
 
             <div class="input-btn-go">
                 <input type="number" id="user-input" placeholder="1부터 100까지 숫자를 입력하세요" />
-                <p class ="direction">Touch the <strong>Go button</strong> or Press the <strong>Go Key</strong></p>
-    
+                <p class="direction">Touch the <strong>Go button</strong> or Press the <strong>Go Key</strong></p>
+
                 <div class="btn-go">
                     <button id="play-button">Go</button>
                 </div>
             </div>
-            <p class ="direction-2">Click the <strong>Go</strong> or Press the <strong>Enter Key</strong></p>
+            <p class="direction-2">Click the <strong>Go</strong> or Press the <strong>Enter Key</strong></p>
 
 
             <div class="btn-result">
@@ -57,4 +60,5 @@
 
     <script src="main.js"></script>
 </body>
+
 </html>

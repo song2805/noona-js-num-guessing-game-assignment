@@ -20,7 +20,7 @@ let resetButton = document.getElementById("reset-button");
 let attempts = document.getElementById("attempts-area");
 let resultImgArea = document.querySelector(".main-img");
 let historyList = document.getElementById("historyList");
-let chances = 3;
+let chances = 5;
 let numberOfAttempts = 0;
 let gameOver = false;
 let chanceArea = document.getElementById("chance-area");
@@ -47,7 +47,7 @@ userInput.addEventListener("focus", function () {
 
 // input에 있는 value를 숫자 입력 후 엔터키를 사용하면 없에준다. 13은 엔터키 keycode
 userInput.addEventListener("keyup", function (event) {
-    if (event.keyCode === 13)
+    if (event.key === "Enter")
         userInput.value = ""
 })
 
@@ -55,7 +55,7 @@ userInput.addEventListener("keyup", function (event) {
 function pickRandomNumber() {
     randomNumber = Math.floor(Math.random() * 100) + 1;
     console.log("정답", randomNumber);
-    answerNumber.textContent = `정답 : ${randomNumber}`;
+   
 }
 
 // To start the game
@@ -122,12 +122,14 @@ function play() {
     } else if (chances == 0 && userValue != randomNumber) {
         resultImgArea.src = "./gif-img/monkey.gif";
         resultArea.innerHTML = "Game Over";
+        answerNumber.textContent = `정답 : ${randomNumber}`;
         resultArea2.textContent = "";
         resultArea.style.color = "#FF76CE ";
     }
     if (chances === 0) {
         chanceArea.disabled = true;
         userInput.disabled = true;
+        answerNumber.textContent = `정답 : ${randomNumber}`;
     }
 }
 
@@ -143,12 +145,14 @@ function reset() {
     // clear user input window user input 창이 깨끗하게 정리되고
     userInput.value = "";
     numberOfAttempts = 0;
-    chances = 3;
+    chances = 5;
     history = [];
     attempts.textContent = `시도 횟수 : ${numberOfAttempts}번`;
     chanceArea.textContent = `남은 찬스 : ${chances}번`;
     enteredNumber.textContent = `${history}`;
     gameOver = false;
+    answerNumber.innerHTML = " ";
+    // answerNumber.textContent = " ";
     // 새로운 번호가 생성되고
 
 
