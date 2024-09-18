@@ -115,6 +115,8 @@ function play() {
     if (gameOver == true) {
         playButton.disabled = true;
         userInput.disabled = true;
+        answerNumber.textContent = `정답 : ${randomNumber}`;
+        
     }
 
     if (chances == 0 && userValue == randomNumber) {
@@ -165,6 +167,7 @@ function correctNumber() {
     resultArea.style.color = "black";
     resultArea2.textContent = "";
     gameOver = true;
+    answerNumber.textContent = `정답 : ${randomNumber}`;
     console.log("맞췄습니다.");
 }
 

@@ -141,26 +141,26 @@ body {
 
     .game-title h2 {
         margin-top: 0px;
-        margin-bottom: 0px;
+        margin-bottom: 10px;
     }
 
-    .game-title h1 {
+    /* .game-title h1 {
         margin-top: 0px;
         padding-left: 0;
-    }
+    } */
 
     #chance-area,
     #attempts-area {
         font-size: 1.0rem;
     }   
 
-    .game-title h3 {
+    /* .game-title h3 {
         margin-top: -10px;
     }
 
     .game-title h1 {
         margin-top: -10px;
-    }
+    } */
     .input-btn-go {
         display: block;
         justify-content: center;
