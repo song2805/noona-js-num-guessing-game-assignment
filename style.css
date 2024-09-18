@@ -21,11 +21,18 @@ body {
 
 .game-title {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    
 }
 
-.game-title h1 {
+.game-title h2 {
+    margin-top: 0px;
     padding-left: 13px;
+}
+
+.game-title h4 {
+    margin-bottom: 15px;
 }
 
 .attempts-chance-area {
@@ -92,12 +99,12 @@ body {
 
 #result-text {
     color: #071952;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
-
+/* 
 #result-text-2 {
    margin-top: 3px;
-}
+} */
 
 #reset-button {
     margin-top: 15px;
@@ -144,7 +151,7 @@ body {
 
     #chance-area,
     #attempts-area {
-        font-size: 1.2rem;
+        font-size: 1.0rem;
     }   
 
     .game-title h3 {
@@ -166,7 +173,8 @@ body {
         padding-top: 5px;
     }
     .input-history {
-        padding-left: 10%;
+        font-size: 0.8rem;
+        padding-left: 12%;
     }
     .direction {
         font-size: 0.8rem;
