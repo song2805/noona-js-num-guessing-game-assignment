@@ -33,7 +33,7 @@ playButton.addEventListener("click", play);
 
 // 엔터키로 Go 버튼 작동시키기
 userInput.addEventListener("keydown", function (event) {
-    if (event.keyCode === 13) {
+    if (event.key === "Enter") {
         play(event);
     }
 
@@ -107,7 +107,7 @@ function play() {
     console.log(history)
 
     enteredNumber.style.color = "#DA7297";
-    enteredNumber.innerHTML = ` ${history}`;
+    enteredNumber.innerHTML = `${history}`;
 
     if (chances < 1) {
         gameOver = true;
