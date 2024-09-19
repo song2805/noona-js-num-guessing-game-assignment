@@ -72,8 +72,10 @@ body {
     width: 240px;
     height: 50px;
     font-size: 1rem;
-    padding-left: 25px;
+    text-align: center;
+    color: #3572EF;
     border-radius: 10px;
+    font-weight: 700
 }
 
 .input-btn-go {
